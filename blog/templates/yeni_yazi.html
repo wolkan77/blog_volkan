@@ -1,0 +1,40 @@
+{% extends 'blog.html' %}
+
+{% block icerik %}
+<main class="container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ yazi_formu.title.id_for_label }}">{{ yazi_formu.title.label }}</label>
+            <input id="{{ yazi_formu.title.id_for_label }}" name="{{ yazi_formu.title.html_name }}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="{{ yazi_formu.content.id_for_label }}">{{ yazi_formu.content.label }}</label>
+            <textarea id="{{ yazi_formu.content.id_for_label }}" name="{{ yazi_formu.content.html_name }}" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="{{ yazi_formu.category.id_for_label }}">{{ yazi_formu.category.label }}</label>
+            <select id="{{ yazi_formu.category.id_for_label }}" name="{{ yazi_formu.category.html_name }}" class="form-control">
+                {% for kategori in kategoriler %}
+                <option value="{{ kategori.id }}">{{ kategori.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="{{ yazi_formu.photo.id_for_label }}">{{ yazi_formu.photo.label }}</label>
+            <input id="{{ yazi_formu.photo.id_for_label }}"
+                   name="{{ yazi_formu.photo.html_name }}"
+                   type="file" class="form-control-file">
+        </div>
+        <!--
+        {% for alan in yazi_formu %}
+        <div class="form-group">
+            <label for="{{ alan.id_for_label }}">{{ alan.label }}</label>
+            <input id="{{ alan.id_for_label }}" class="form-control">
+        </div>
+        {% endfor %}
+        -->
+        <input type="submit" class="btn btn-primary">
+    </form>
+</main>
+{% endblock %}
