@@ -44,8 +44,8 @@ class YeniYazi(FormView):
         send_mail(
             "Blog'da yeni yazı: " + form.cleaned_data["title"],
             form.cleaned_data['content'],
-            "onur@ari24.com",
-            ["onur@ari24.com"]
+            "wolkan777@gmail.com",
+            ["wolkan777@gmail.com"]
         )
         return super(YeniYazi, self).form_valid(form)
 
