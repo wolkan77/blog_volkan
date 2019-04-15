@@ -20,7 +20,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '0eba)dl6n-7wpn7_*8i5^do8pje+js0c)6a*&t1#7)w$aj^1+b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -127,19 +126,3 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 
-ADMINS = (
-    ("Volkan", "wolkan777@gmail.com"),
-)
-
-MANAGERS = (
-    ("Volkan", "wolkan777@gmail.com"),
-)
-
-EMAIL_HOST = "smtp.sendgrid.net"
-EMAIL_HOST_USER = "apikey"
-EMAIL_HOST_PASSWORD = "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"
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
-
-# EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-# SENDGRID_API_KEY = "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"
